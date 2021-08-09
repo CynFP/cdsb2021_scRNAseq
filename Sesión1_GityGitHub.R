@@ -78,3 +78,28 @@ usethis::use_git() #
 usethis::use_github()
 
 gh::gh_whoami() # para checar cómo quedó la configuración
+
+# escribimos un nuevo archivo e indicamos dónde lo queremos
+writeLines("hola", "R/prueba.R")
+# también podemos hacerlo así
+usethis::use_r("archivo-prueba-github.R") # añade archivo al directorio R del proyecto actual
+
+# Por ejemplo podríamos probar añadir algo nuevo
+gert::git_add("R/archivo-prueba-github.R")
+
+# añadimos commit de lo que se hizo
+gert::git_commit("se subio archivo prueba")
+
+# nos da info de los commits
+gert::git_log()
+
+# sube tus cambios del repo local a los de github
+gert::git_push() # COMANDO IMPORTANTE
+
+
+############## ejercicio poscards #####
+
+## Creen el RStudio project. Es MUY importante que el usuario debe sea igual que en github
+usethis::create_project("CynFP.github.io")
+
+#abri un nuevo proyecto pero salio un error
